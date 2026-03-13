@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BookForge Firestore</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="sidebar">
+  <h3>Bücher</h3>
+  <div id="booksList"></div>
+  <button onclick="newBook()">➕ Neues Buch</button>
+</div>
+
+<div id="main">
+  <div id="toolbar">
+    <button onclick="addChapter()">➕ Kapitel</button>
+    <button onclick="openPreview()">👀 Vorschau</button>
+    <button onclick="exportPDF()">📄 PDF exportieren</button>
+    <button onclick="exportLBook()">💾 .lbook speichern</button>
+    <input type="file" id="audioUpload" accept="audio/mp3" onchange="addAudio(event)">
+  </div>
+  <div id="chapters">
+    <h4>Kapitel</h4>
+  </div>
+  <div id="editor" contenteditable="true">Hier Text schreiben...</div>
+</div>
+
+<div id="previewOverlay">
+  <div style="position:absolute;top:10px;right:10px;">
+    <button onclick="closePreview()">❌ Schließen</button>
+  </div>
+  <div style="display:flex;height:100%;align-items:center;justify-content:center;">
+    <button onclick="prevPage()" style="height:50%;font-size:24px;">⬅️</button>
+    <div id="previewPage"></div>
+    <button onclick="nextPage()" style="height:50%;font-size:24px;">➡️</button>
+  </div>
+</div>
+
+<script type="module" src="script.js"></script>
+</body>
+</html>
